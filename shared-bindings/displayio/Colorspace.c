@@ -11,6 +11,7 @@
 #include "shared-bindings/displayio/__init__.h"
 
 MAKE_ENUM_VALUE(displayio_colorspace_type, displayio_colorspace, RGB888, DISPLAYIO_COLORSPACE_RGB888);
+MAKE_ENUM_VALUE(displayio_colorspace_type, displayio_colorspace, RGB666, DISPLAYIO_COLORSPACE_RGB666);
 MAKE_ENUM_VALUE(displayio_colorspace_type, displayio_colorspace, RGB565, DISPLAYIO_COLORSPACE_RGB565);
 MAKE_ENUM_VALUE(displayio_colorspace_type, displayio_colorspace, RGB565_SWAPPED, DISPLAYIO_COLORSPACE_RGB565_SWAPPED);
 MAKE_ENUM_VALUE(displayio_colorspace_type, displayio_colorspace, RGB555, DISPLAYIO_COLORSPACE_RGB555);
@@ -41,6 +42,7 @@ MAKE_ENUM_VALUE(displayio_colorspace_type, displayio_colorspace, L8, DISPLAYIO_C
 //|
 MAKE_ENUM_MAP(displayio_colorspace) {
     MAKE_ENUM_MAP_ENTRY(displayio_colorspace, RGB888),
+    MAKE_ENUM_MAP_ENTRY(displayio_colorspace, RGB666),
     MAKE_ENUM_MAP_ENTRY(displayio_colorspace, RGB565),
     MAKE_ENUM_MAP_ENTRY(displayio_colorspace, RGB565_SWAPPED),
     MAKE_ENUM_MAP_ENTRY(displayio_colorspace, RGB555),

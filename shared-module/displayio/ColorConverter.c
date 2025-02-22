@@ -42,6 +42,13 @@ uint8_t displayio_colorconverter_compute_rgb332(uint32_t color_rgb888) {
     return r3 << 5 | g3 << 2 | b2;
 }
 
+uint32_t displayio_colorconverter_compute_rgb666(uint32_t color_rgb888) {
+    uint32_t r6 = (color_rgb888 >> 18);
+    uint32_t g6 = (color_rgb888 >> 9) & 0x3f;
+    uint32_t b6 = (color_rgb888 >> 2) & 0x3f;
+    return ( r6 << 12| g6 << 6 | b6);
+}
+
 uint8_t displayio_colorconverter_compute_rgbd(uint32_t color_rgb888) {
     uint32_t r1 = (color_rgb888 >> 23) & 0x1;
     uint32_t g1 = (color_rgb888 >> 15) & 0x1;
@@ -200,6 +207,14 @@ uint32_t displayio_colorconverter_convert_pixel(displayio_colorspace_t colorspac
             uint32_t r8 = (pixel >> 10) << 3;
             uint32_t g8 = ((pixel >> 5) << 3) & 0xff;
             uint32_t b8 = (pixel << 3) & 0xff;
+            pixel = (r8 << 16) | (g8 << 8) | b8;
+        }
+        break;
+
+        case DISPLAYIO_COLORSPACE_RGB666: {
+            uint32_t r8 = (pixel >> 12) << 2;
+            uint32_t g8 = ((pixel >> 6) << 2) & 0xff;
+            uint32_t b8 = (pixel << 2) & 0xff;
             pixel = (r8 << 16) | (g8 << 8) | b8;
         }
         break;

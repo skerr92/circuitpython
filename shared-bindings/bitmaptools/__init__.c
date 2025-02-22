@@ -372,6 +372,7 @@ static mp_obj_t bitmaptools_alphablend(size_t n_args, const mp_obj_t *pos_args, 
             }
             break;
 
+        case DISPLAYIO_COLORSPACE_RGB666:
         case DISPLAYIO_COLORSPACE_RGB565:
         case DISPLAYIO_COLORSPACE_RGB565_SWAPPED:
         case DISPLAYIO_COLORSPACE_BGR565:
@@ -883,6 +884,7 @@ static mp_obj_t bitmaptools_dither(size_t n_args, const mp_obj_t *pos_args, mp_m
 
 
     switch (colorspace) {
+        case DISPLAYIO_COLORSPACE_RGB666:
         case DISPLAYIO_COLORSPACE_RGB565:
         case DISPLAYIO_COLORSPACE_RGB565_SWAPPED:
         case DISPLAYIO_COLORSPACE_BGR565:
